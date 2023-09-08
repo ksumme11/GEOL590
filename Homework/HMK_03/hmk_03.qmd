@@ -238,7 +238,8 @@ instlibrary(tidyverse)
 
     ) +
 
-    scale_color_colorblind()
+    scale_color_colorblind().
+    
 
 3.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
 
