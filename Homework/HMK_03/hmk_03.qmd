@@ -1,0 +1,247 @@
+---
+title: "Homework 03"
+format: gfm
+editor: visual
+---
+
+# Base R and R Basics
+
+HINT: Remember that you can get help on any function by typing `?`(function name). For instance, `?rnorm` gives help on the `rnorm()` function.
+
+## Creating and naming variables
+
+1.  Create a variable called `x` and use it to store the result of the calculation `(3*(4+2)`.
+
+    ```         
+    x <- (3 * (4 + 2))
+    ```
+
+2.  Calculate the product of `x` (from the above question) times π.
+
+    ```         
+    print(pi)*x
+    #> [1] 56.54867
+
+    OR 
+
+    π <- 3.14159
+    x & π
+    #> [1] 56.54867
+    ```
+
+3.  Use the `getwd()` function to show your current working directory. Is that a good working directory, and what program do you think set it that way?
+
+    ```         
+    > getwd() 
+    [1] "C:/Users/kayla/Downloads"
+    ```
+
+    No, it is not a good working directory because it is not linked to my class folder. I think R automatically set the directory to my "downloads" folder because I did not indicate the directory I wanted it to follow. I reset the directory to my class folder using the setwd() function.
+
+    getwd() \[1\]
+
+    "C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590"
+
+## Vectors
+
+1.  Use the `c()` function to create a vector of numbers.
+
+    c(1.1, 2.2, 3.3, 4.4, 5.5)
+
+2.  Use the `c()` function to create a vector of characters.
+
+    ```         
+    > c("one", "two", "three") 
+    [1] "one"   "two"   "three"
+    ```
+
+3.  Use the `:` implicit function to create a vector of integers from 1 to 10.
+
+    ```         
+    > 1:10  
+    [1]  1  2  3  4  5  6  7  8  9 10
+
+    OR 
+
+    c(1:10)
+    ```
+
+4.  Explain *why* the following code returns what it does. Also address whether you think this was a good decision on the part of the designers of R?
+
+```{r, warning=FALSE}
+v1 <- 1:3
+v2 <- c(1:4)
+v1 + v2
+```
+
+\[1\] 2 4 6 5
+
+#{r, warning=FALSE} ensures that warnings are suppressed in R markdown output
+
+#v1 is an implicit function and 1:3 means a string of 1, 2, 3
+
+#v2 is also a string of numbers, so c(1:4) is 1, 2, 3, 4. c() is the combine function and gives parameters inside the function.
+
+#v1 + v2 adds the numbers of the vectors together and yields four numbers in a vector " 2 4 6 5"
+
+#The code returns the message: "longer object length is not a multiple of shorter object length," which occurs when you are performing a function on vectors, and the vectors are not the same length. I think it was a good decision for the R designers to include it because it may help you realize if you've left a number out, or stop you from making miscalculations. Inconsistency can create confusion when you add the two vectors together
+
+5.  Explain what the following code does. It may be helpful to reference the answer to the previous question:
+
+    The code takes each individual number in the parentheses and distributes to add 3 to each number in the vector. This is a clear way of adding values because there is only one number to be added to each number, compared to using two vectors like the previous question.
+
+```{r}
+c(1, 5, 9) + 3
+```
+
+6.  Remove (delete) every variable in your workspace.
+
+    rm(list=ls())\
+    #rm removes what is listed in the function, list allows the names to be added to the function and ls() includes variables/objects in the workspace.\
+
+## Graphics
+
+1.  Load the tidyverse package. **NOTE:** Be sure to use the chunk option `message=FALSE` to suppress the messages that tidyverse prints when loaded. These messages are useful in the
+
+```{r, message=FALSE}
+
+message=FALSE
+instlibrary(tidyverse)
+
+```
+
+2.  Recreate the visualization of `body_mass_g` to `flipper_length_mm`, from the penguins data set, that is shown in question 8 of section 2.2.5 of [R4DS](https://r4ds.hadley.nz/data-visualize).
+
+    #Load the libraries of data and ggplot for graphing
+
+    library(palmerpenguins)
+
+    library(ggthemes)
+
+    #Load the data frame
+
+    palmerpenguins::penguins
+
+    #Alternative view of data frame \--\> will open new window with data
+
+    View(penguins)
+
+    #For more info on penguins type and a help window will appear with background info
+
+    ?penguins
+
+    #To make a blank canvas for the ggplot
+
+    ggplot(data = penguins)
+
+    #To map out the plot
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+
+    )
+
+    #To define the geom
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+
+    ) +
+
+    geom_point()
+
+    #\> Warning: Removed 2 rows containing missing values (\`geom_point()\`).
+
+    #Change point colors
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+
+    ) +
+
+    geom_point()
+
+    #Add line of best fit
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)
+
+    ) +
+
+    geom_point() +
+
+    geom_smooth(method = "lm")
+
+    #Line of best fit for entire data set
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+
+    ) +
+
+    geom_point(mapping = aes(color = species)) +
+
+    geom_smooth(method = "lm")
+
+    #Add shapes to data points
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+
+    ) +
+
+    geom_point(mapping = aes(color = species, shape = species)) +
+
+    geom_smooth(method = "lm")
+
+    #fix titles and such
+
+    ggplot(
+
+    data = penguins,
+
+    mapping = aes(x = flipper_length_mm, y = body_mass_g)
+
+    ) +
+
+    geom_point(aes(color = species, shape = species)) +
+
+    geom_smooth(method = "lm") +
+
+    labs(
+
+    title = "Body mass and flipper length",
+
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+
+    x = "Flipper length (mm)", y = "Body mass (g)",
+
+    color = "Species", shape = "Species"
+
+    ) +
+
+    scale_color_colorblind()
+
+3.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
+
+global level - sets the background basis of the map and that's passed down and all other layers are set on top of that
+
+geom tells it what kind of plot you're trying to make, it allows your to use aesthetics to further differentiate different data points.
