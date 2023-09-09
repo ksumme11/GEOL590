@@ -8,7 +8,7 @@ editor: visual
 
 # GEOL590 Homework 02
 
-### Question 1 
+### Question 1
 
 *What were the main issues in the Reinhard and Rogoff issue, and how best could they have been avoided?*
 
@@ -16,7 +16,7 @@ editor: visual
 
 The main problems in the Reinhard and Rogoff issue were that there were flaws in their data analysis. While running their analysis, they left out two major pieces of data that ended up skewing their results, which was revealed after Herndon, Ash, and Pollin ran a replicate of the results. The research covered government debt load, a hot button topic, and was used as ammunition in political speeches. These issues could have best been avoided by checking the data more thoroughly before sharing it with the public. Additionally, Reinhard and Rogoff acknowledged the issue and explained that their data was a work in progress and had updates available. As the article points out, it is essential to acknowledge the accuracy of analyses, especially when the data concerns a politically charged topic.
 
-### Question 2 
+### Question 2
 
 *What key attributes make a piece of data analysis "reproducible"? Please put those attributes in a prioritized list.*
 
