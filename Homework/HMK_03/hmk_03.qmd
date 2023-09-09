@@ -112,7 +112,7 @@ rm(list=ls())
 
 1.  Load the tidyverse package. **NOTE:** Be sure to use the chunk option `message=FALSE` to suppress the messages that tidyverse prints when loaded. These messages are useful in the
 
-```{r, message=FALSE}
+```{r, warning=FALSE}
 
 message=FALSE
 
@@ -122,23 +122,12 @@ library(tidyverse)
 
 2.  Recreate the visualization of `body_mass_g` to `flipper_length_mm`, from the penguins data set, that is shown in question 8 of section 2.2.5 of [R4DS](https://r4ds.hadley.nz/data-visualize).
 
-```{r, message=FALSE}
+```{r, warning=FALSE, message=FALSE}
 
 #Load the libraries of data and ggplot for graphing
-
     library(palmerpenguins)
-
     library(ggthemes)
-    
     library(ggplot2)
-
-#Load the data frame
-
-    palmerpenguins::penguins
-
-#To make a blank canvas for the ggplot
-
-    ggplot(data = penguins)
 
 #Recreate final graph 
     ggplot(
