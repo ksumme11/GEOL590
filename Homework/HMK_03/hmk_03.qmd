@@ -115,7 +115,8 @@ rm(list=ls())
 ```{r, message=FALSE}
 
 message=FALSE
-instlibrary(tidyverse)
+
+library(tidyverse)
 
 ```
 
