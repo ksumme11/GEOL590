@@ -171,15 +171,16 @@ message=FALSE
 library(tidyverse)
 ```
 
-    Warning: package 'tidyverse' was built under R version 4.2.3
-
-    Warning: package 'ggplot2' was built under R version 4.2.3
-
-    Warning: package 'readr' was built under R version 4.2.3
-
-    Warning: package 'forcats' was built under R version 4.2.3
-
-    Warning: package 'lubridate' was built under R version 4.2.3
+    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+    ✔ dplyr     1.1.0     ✔ readr     2.1.4
+    ✔ forcats   1.0.0     ✔ stringr   1.5.0
+    ✔ ggplot2   3.4.1     ✔ tibble    3.1.8
+    ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+    ✔ purrr     1.0.1     
+    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ✖ dplyr::filter() masks stats::filter()
+    ✖ dplyr::lag()    masks stats::lag()
+    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
 2.  Recreate the visualization of `body_mass_g` to `flipper_length_mm`,
     from the penguins data set, that is shown in question 8 of section
@@ -191,28 +192,6 @@ library(tidyverse)
     library(ggthemes)
     library(ggplot2)
 
-#Load the data frame
-
-    palmerpenguins::penguins
-```
-
-    # A tibble: 344 × 8
-       species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-       <fct>   <fct>              <dbl>         <dbl>             <int>       <int>
-     1 Adelie  Torgersen           39.1          18.7               181        3750
-     2 Adelie  Torgersen           39.5          17.4               186        3800
-     3 Adelie  Torgersen           40.3          18                 195        3250
-     4 Adelie  Torgersen           NA            NA                  NA          NA
-     5 Adelie  Torgersen           36.7          19.3               193        3450
-     6 Adelie  Torgersen           39.3          20.6               190        3650
-     7 Adelie  Torgersen           38.9          17.8               181        3625
-     8 Adelie  Torgersen           39.2          19.6               195        4675
-     9 Adelie  Torgersen           34.1          18.1               193        3475
-    10 Adelie  Torgersen           42            20.2               190        4250
-    # ℹ 334 more rows
-    # ℹ 2 more variables: sex <fct>, year <int>
-
-``` r
 #Recreate final graph 
     ggplot(
   data = penguins, # dataset
@@ -220,8 +199,6 @@ library(tidyverse)
   geom_point(aes(color = bill_depth_mm)) + # scatter plot information
   geom_smooth() # line showing how these points and other info correlate
 ```
-
-    `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 
 ![](hmk_03_files/figure-commonmark/unnamed-chunk-12-1.png)
 
