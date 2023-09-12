@@ -2,11 +2,9 @@
 
 # Base R and R Basics
 
-HINT: Remember that you can get help on any function by typing
-`?`(function name). For instance, `?rnorm` gives help on the `rnorm()`
-function.
-
 ## Creating and naming variables
+
+------------------------------------------------------------------------
 
 1.  Create a variable called `x` and use it to store the result of the
     calculation `(3*(4+2)`.
@@ -69,6 +67,8 @@ getwd()
     [1] "C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590/Homework/HMK_03"
 
 ## Vectors
+
+------------------------------------------------------------------------
 
 1.  Use the `c()` function to create a vector of numbers.
 
@@ -161,6 +161,8 @@ workspace, which tells R to remove everything under ls().
 
 ## Graphics
 
+------------------------------------------------------------------------
+
 1.  Load the tidyverse package. **NOTE:** Be sure to use the chunk
     option `message=FALSE` to suppress the messages that tidyverse
     prints when loaded. These messages are useful in the
@@ -202,7 +204,8 @@ library(tidyverse)
 
 ![](hmk_03_files/figure-commonmark/unnamed-chunk-12-1.png)
 
-3.  Explain why each aesthetic is mapped at the level that it is (i.e.,
+3.  
+4.  Explain why each aesthetic is mapped at the level that it is (i.e.,
     at the global level, in the `ggplot()` function call, or at the geom
     level, in the `geom_XXX()` function call). Note: A lot of different
     options will work, but some options are clearly better than others.
