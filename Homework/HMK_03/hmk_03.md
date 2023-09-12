@@ -204,8 +204,6 @@ library(tidyverse)
 
 ![](hmk_03_files/figure-commonmark/unnamed-chunk-12-1.png)
 
-\![\](hmk_03_files/figure-commonmark/unnamed-chunk-12-1.png)
-
 4.  Explain why each aesthetic is mapped at the level that it is (i.e.,
     at the global level, in the `ggplot()` function call, or at the geom
     level, in the `geom_XXX()` function call). Note: A lot of different
