@@ -116,6 +116,7 @@ rm(list=ls())
 message=FALSE
 
 library(tidyverse)
+install.packages("knitr")
 
 ```
 
@@ -136,7 +137,6 @@ library(tidyverse)
   geom_smooth() # line showing how these points and other info correlate
     
 ```
-(Homework/HMK_03/unnamed-chunk-12-2.png)
 
 4.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
 
