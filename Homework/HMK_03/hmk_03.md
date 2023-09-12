@@ -52,7 +52,7 @@ getwd()
     #>[1] "C:/Users/kayla/Downloads"
 ```
 
-\#No, it is not a good working directory because it is not linked to my
+No, it is not a good working directory because it is not linked to my
 class folder. I think R automatically set the directory to my
 “downloads” folder because I did not indicate the directory I wanted it
 to follow. I reset the directory to my class folder using the setwd()
@@ -115,33 +115,33 @@ v1 + v2
 
     [1] 2 4 6 5
 
-\#{r, warning=FALSE} ensures that warnings are suppressed in R markdown
+{r, warning=FALSE} ensures that warnings are suppressed in R markdown
 output
 
-\#v1 is an implicit function and 1:3 means a string of 1, 2, 3
+v1 is an implicit function and 1:3 means a string of 1, 2, 3
 
-\#v2 is also a string of numbers, so c(1:4) is 1, 2, 3, 4. c() is the
+v2 is also a string of numbers, so c(1:4) is 1, 2, 3, 4. c() is the
 concatenate function and gives parameters inside the function.
 
-\#v1 + v2 adds the numbers of the vectors together and yields four
-numbers in a vector ” 2 4 6 5”
+v1 + v2 adds the numbers of the vectors together and yields four numbers
+in a vector ” 2 4 6 5”
 
-\#The code returns the message: “longer object length is not a multiple
-of shorter object length,” which occurs when you are performing a
-function on vectors, and the vectors are not the same length. R responds
-by adding the last value of v4 is added to the first number of v3
-because the vector wraps. Although it is nice that R provides a warning
-that something could be wonky, it could still easily become confusing to
-the user. It would make more sense for the code to only run vectors of
-the same lenght to avoid inaccurate data that could easily be missed.
+The code returns the message: “longer object length is not a multiple of
+shorter object length,” which occurs when you are performing a function
+on vectors, and the vectors are not the same length. R responds by
+adding the last value of v4 is added to the first number of v3 because
+the vector wraps. Although it is nice that R provides a warning that
+something could be wonky, it could still easily become confusing to the
+user. It would make more sense for the code to only run vectors of the
+same lenght to avoid inaccurate data that could easily be missed.
 
 5.  Explain what the following code does. It may be helpful to reference
     the answer to the previous question:
 
-\#The code takes each individual number in the parentheses and
-distributes to add 3 to each number in the vector. This is a clear way
-of adding values because there is only one number to be added to each
-number, compared to using two vectors like the previous question.
+The code takes each individual number in the parentheses and distributes
+to add 3 to each number in the vector. This is a clear way of adding
+values because there is only one number to be added to each number,
+compared to using two vectors like the previous question.
 
 ``` r
 c(1, 5, 9) + 3
@@ -155,7 +155,7 @@ c(1, 5, 9) + 3
 rm(list=ls())
 ```
 
-\#rm removes what is listed in the function, list allows the names to be
+rm removes what is listed in the function, list allows the names to be
 added to the function and ls() includes variables/objects in the
 workspace, which tells R to remove everything under ls().
 
@@ -172,17 +172,6 @@ message=FALSE
 
 library(tidyverse)
 ```
-
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.1.0     ✔ readr     2.1.4
-    ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ✔ ggplot2   3.4.1     ✔ tibble    3.1.8
-    ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ✔ purrr     1.0.1     
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
 2.  Recreate the visualization of `body_mass_g` to `flipper_length_mm`,
     from the penguins data set, that is shown in question 8 of section
