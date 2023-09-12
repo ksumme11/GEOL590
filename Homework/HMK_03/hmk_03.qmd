@@ -134,10 +134,11 @@ library(tidyverse)
   mapping = aes(x = flipper_length_mm, y = body_mass_g)) + # x and y axis information and labels
   geom_point(aes(color = bill_depth_mm)) + # scatter plot information
   geom_smooth() # line showing how these points and other info correlate
-  
+    
 ```
+(Homework/HMK_03/unnamed-chunk-12-2.png)
 
-3.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
+4.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
 
 global level - sets the background basis of the map and that's passed down and all other layers are set on top of that
 
