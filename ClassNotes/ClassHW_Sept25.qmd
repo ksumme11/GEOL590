@@ -1,0 +1,55 @@
+---
+title: "Sept25_ClassAssignment"
+format: html
+editor: visual
+---
+
+```{r, message=FALSE, warning=FALSE}
+
+fen_counts <- read.csv("fake_eagle_nest_counts.csv")
+
+fen_counts
+
+```
+
+------------------------------------------------------------------------
+
+I would not describe this data as tidy because the each variable is not listed in a column and each observation is not listed in a row. A more useful way to view the data would be having a column for year with all the years listed below, a column for the region with the region specified as the value, and a column for the count of eagles nests present.
+
+So, we will "pivot" the data frame to make it "tidy".
+
+## Pivoted Data Frame
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+fen_counts |>
+  pivot_longer(
+    cols = !c(year), 
+    names_to = "Region", 
+    values_to = "Count"
+  )
+
+```
+
+## Scatter Plot 
+
+Now the data is tidy and ready to plot. 
+
+```{r}
+library(ggplot2)
+
+fen_plot <- fen_counts |>
+  pivot_longer(
+    cols = !c(year), 
+    names_to = "Region", 
+    values_to = "Count"
+  )
+
+  ggplot(fen_plot, aes(x = Count, y = year, color = Region)) +
+  geom_point() + 
+    geom_smooth(formula = y~x, method = "lm")
+   
+
+```
+
