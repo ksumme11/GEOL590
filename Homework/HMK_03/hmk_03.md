@@ -16,27 +16,21 @@
 2.  Calculate the product of `x` (from the above question) times π.
 
 ``` r
- print(pi)*x
+print(pi)*x
 ```
 
     [1] 3.141593
 
     [1] 56.54867
 
-``` r
-    #> [1] 56.54867
-    
-#OR 
-
- π <- 3.14159
-    x & π
-```
-
-    [1] TRUE
+OR
 
 ``` r
-    #> [1] 56.54867
+π <- 3.14159
+x * π
 ```
+
+    [1] 56.54862
 
 3.  Use the `getwd()` function to show your current working directory.
     Is that a good working directory, and what program do you think set
@@ -48,23 +42,14 @@ getwd()
 
     [1] "C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590/Homework/HMK_03"
 
-``` r
-    #>[1] "C:/Users/kayla/Downloads"
-```
-
 No, it is not a good working directory because it is not linked to my
 class folder. I think R automatically set the directory to my
 “downloads” folder because I did not indicate the directory I wanted it
 to follow. I reset the directory to my class folder using the setwd()
 function.
 
-``` r
-#changed working directory manually through session -> set working directory -> choose path 
-#new working directory 
-getwd()
-```
-
-    [1] "C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590/Homework/HMK_03"
+I changed the working directory manually through session -\> set working
+directory -\> choose path
 
 ## Vectors
 
@@ -95,9 +80,9 @@ c("one", "two", "three")
 
      [1]  1  2  3  4  5  6  7  8  9 10
 
-``` r
-#OR 
+OR
 
+``` r
 c(1:10)
 ```
 
@@ -191,7 +176,7 @@ library(tidyverse)
   geom_smooth() # line showing how these points and other info correlate
 ```
 
-![](hmk_03_files/figure-commonmark/unnamed-chunk-12-1.png)
+![](hmk_03_files/figure-commonmark/unnamed-chunk-13-1.png)
 
 4.  Explain why each aesthetic is mapped at the level that it is (i.e.,
     at the global level, in the `ggplot()` function call, or at the geom

@@ -19,31 +19,30 @@ editor: visual
 2.  Calculate the product of `x` (from the above question) times π.
 
 ```{r}
- print(pi)*x
-    #> [1] 56.54867
-    
-#OR 
 
- π <- 3.14159
-    x & π
-    #> [1] 56.54867
+print(pi)*x
 
 ```
+
+OR
+
+```{r}
+π <- 3.14159
+x * π
+```
+
 
 3.  Use the `getwd()` function to show your current working directory. Is that a good working directory, and what program do you think set it that way?
 
 ```{r}
+
 getwd() 
-    #>[1] "C:/Users/kayla/Downloads"
+
 ```
 
 No, it is not a good working directory because it is not linked to my class folder. I think R automatically set the directory to my "downloads" folder because I did not indicate the directory I wanted it to follow. I reset the directory to my class folder using the setwd() function.
 
-```{r}
-#changed working directory manually through session -> set working directory -> choose path 
-#new working directory 
-getwd()
-```
+I changed the working directory manually through session -> set working directory -> choose path 
 
 ## Vectors
 
@@ -64,19 +63,28 @@ c("one", "two", "three")
 3.  Use the `:` implicit function to create a vector of integers from 1 to 10.
 
 ```{r}
+
 1:10 
 
-#OR 
+```
+
+OR
+
+```{r}
 
 c(1:10)
+
 ```
+
 
 4.  Explain *why* the following code returns what it does. Also address whether you think this was a good decision on the part of the designers of R?
 
 ```{r, warning=FALSE}
+
 v1 <- 1:3
 v2 <- c(1:4)
 v1 + v2
+
 ```
 
 {r, warning=FALSE} ensures that warnings are suppressed in R markdown output
@@ -94,13 +102,17 @@ The code returns the message: "longer object length is not a multiple of shorter
 The code takes each individual number in the parentheses and distributes to add 3 to each number in the vector. This is a clear way of adding values because there is only one number to be added to each number, compared to using two vectors like the previous question.
 
 ```{r}
+
 c(1, 5, 9) + 3
+
 ```
 
 6.  Remove (delete) every variable in your workspace.
 
 ```{r}
+
 rm(list=ls())
+
 ```
 
 rm removes what is listed in the function, list allows the names to be added to the function and ls() includes variables/objects in the workspace, which tells R to remove everything under ls().
