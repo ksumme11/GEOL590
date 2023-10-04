@@ -1,0 +1,112 @@
+---
+title: "HMK 5: Reading and tidying data"
+format: gfm
+---
+
+# Reading
+
+-   [R4DS Chapters 6-9](https://r4ds.hadley.nz/data-import)
+
+# Data import
+
+## Q1:
+
+-   Use `read_csv()` to read the file to an R data frame. Follow the instructions in Ch 9 to format it properly. Follow the directions in Ch 9 to make sure the following are true:
+-   Column names should be *syntactic*, meaning they don't contain spaces. 
+- N/A values should be represented with the R value `NA`, not the character "N/A". 
+- Data types (character vs factor vs numeric) should be appropriate.
+
+**Loading packages and reading in data file**
+```{r, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+
+students <- read_csv("Data.csv")
+View(students)
+```
+
+**Begin to tidy**
+I'll start by making it so the empty columns (NA) and the "N/A" responses are interprested as the same thing. 
+
+```{r, warning=FALSE, message=FALSE}
+
+students <- read_csv("Data.csv", 
+                     na = c("N/A", ""))
+
+library(janitor)
+students <- students |> clean_names()
+
+```
+
+Next, I want to change all my column names so they are in the same format. 
+```{r}
+
+library(janitor)
+students <- students |> clean_names()
+
+```
+
+Finally, I need to change the types of variables that are listed in the columns to better analyze the data. Meal plan needs to be changed from a character to a factor, since it is a categorical variable with only specific possibilities. Also, because 5 is listed as both "5" and "five" we want to use the if_else argument to change the character string from "five" to "5". This makes everything in the column a number. 
+```{r}
+
+glimpse(students)
+students <- students |> 
+  mutate(meal_plan = factor(meal_plan), 
+         age = parse_number(if_else(age == "five", "5", age)))
+```
+
+
+## Q2
+
+Find (or make) a data file of your own, in text format. Read it into a well-formatted data frame.
+
+```{r}
+Canopy <- read_csv("Knox_TreeCanopy2.csv") 
+
+Canopy <- Canopy |> clean_names()
+
+View(Canopy)
+
+```
+
+# Tidying
+
+## Q3a
+Next, use `read_csv()` to read the data into a data frame. Note that you'll need to make use of some of the optional arguments. Use `?read_csv` to see what they are.
+**Download dataset with adjustments**
+```{r}
+eval <- read_csv("colloquium_assessment.csv",
+                 col_names = c("start_time", "end_time", "status", "progress", "duration", "finished", "recorded_date", "response_id", "last_name", "first_name", "email", "external_reference", "latitude", "longitude", "distribution_channel", "language", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "comments"),
+                 skip = 5) |> 
+  filter(!is.na(start_time))
+```
+- *col_names* to make more useful names for columns
+- *skip* to skip the first lines that don't have data 
+- *filter* to remove rows with no start_time
+
+As we discussed in class, the correct shape depends on what you want to do with the data. Use `pivot_longer()` to make the data frame longer, in a way that makes sense.
+
+```{r}
+new_eval <- eval |> 
+  pivot_longer(cols = starts_with("q"), 
+               names_to = "question", 
+               values_to = "response") |> 
+   mutate(question = parse_number(question))
+
+View(new_eval)
+
+```
+- used *mutate* to remove "q" from the beginning of each question number
+- made data frame longer using *pivot_longer* so all the responses were in one column under the question heading. 
+
+## Q3b
+
+Finally, calculate this student's average score for each of questions 7-10.
+
+```{r}
+new_eval |> 
+  filter(question >= 7) |>
+  summarise(mean(response))
+```
+
+*filter* used to show only scores for numbers equal or greater to 7. Then the summarise fucntion uses that "new data frame" so it can calculate the averave response.
