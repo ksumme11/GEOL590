@@ -11,6 +11,13 @@ knitr::include_graphics("GoodGraph.png")
 
 ![](GoodGraph.png)
 
+- Concentrations of extracted Fe in organic or mineral horizon soils
+  from different oxides, magnetite, and organic-bound Fe.
+- Asterisks denote significant differences between organic and mineral
+  horizons.
+- Color blind friendly colors, clear x and y-axis labels, error bars,
+  ect.
+
 ## Bad Plot
 
 ``` r
@@ -18,3 +25,9 @@ knitr::include_graphics("BadGraph.png")
 ```
 
 ![](BadGraph.png)
+
+- They are trying to convey how many Nobel Laureates there are from each
+  country and the total of Nobel Laureates in each subject.
+- It is difficult to compare (use width of bands to estimate totals in a
+  subject?).
+- It may be exceptionally confusing for thos who are color blind.
