@@ -1,0 +1,21 @@
+---
+title: "HMK_06"
+format: gfm
+editor: visual
+---
+
+# Homework 06
+
+## Good Plot
+
+```{r}
+library(knitr)
+knitr::include_graphics("GoodGraph.png")
+```
+
+## Bad Plot
+
+```{r}
+
+knitr::include_graphics("BadGraph.png")
+```
