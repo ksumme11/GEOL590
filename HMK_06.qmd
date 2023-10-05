@@ -1,0 +1,32 @@
+---
+title: "HMK06"
+format: gfm
+editor: visual
+---
+
+## Good Graph
+
+```{r, warning=FALSE, message=FALSE}
+library(knitr)
+knitr::include_graphics("GoodGraph.png")
+
+```
+
+-   Concentrations of extracted Fe in organic or mineral horizon soils from different oxides, magnetite, and organic-bound Fe.
+
+-   Asterisks denote significant differences between organic and mineral horizons.
+
+-   Color blind friendly colors, clear x and y-axis labels, error bars, ect.
+
+## Bad Graph
+
+```{r}
+knitr::include_graphics("BadGraph.png")
+
+```
+
+-   Trying to convey how many Nobel Laureates from each country + the total in each subject.
+
+-   Difficult to compare (use the width of bands to estimate totals in each subject?)
+
+-   May be exceptionally confusing for those who are color blind.
