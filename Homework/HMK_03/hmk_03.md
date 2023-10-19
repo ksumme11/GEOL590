@@ -42,14 +42,11 @@ getwd()
 
     [1] "C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590/Homework/HMK_03"
 
-No, it is not a good working directory because it is not linked to my
-class folder. I think R automatically set the directory to my
-“downloads” folder because I did not indicate the directory I wanted it
-to follow. I reset the directory to my class folder using the setwd()
-function.
-
-I changed the working directory manually through session -\> set working
-directory -\> choose path
+Yes, the working directory that is set is useful for this document. I
+opened the document in my MICR 575 project in R, which is automatically
+set to C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590, my class
+folder. I changed my working directory to go to my ~/Homework/HMK_03
+folder within the class folder for this assignment.
 
 ## Vectors
 
@@ -153,8 +150,6 @@ workspace, which tells R to remove everything under ls().
     prints when loaded. These messages are useful in the
 
 ``` r
-message=FALSE
-
 library(tidyverse)
 ```
 
@@ -164,16 +159,15 @@ library(tidyverse)
 
 ``` r
 #Load the libraries of data and ggplot for graphing
-    library(palmerpenguins)
-    library(ggthemes)
-    library(ggplot2)
+library(palmerpenguins)
+library(ggthemes)
+library(ggplot2)
 
 #Recreate final graph 
-    ggplot(
-  data = penguins, # dataset
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)) + # x and y axis information and labels
-  geom_point(aes(color = bill_depth_mm)) + # scatter plot information
-  geom_smooth() # line showing how these points and other info correlate
+ggplot(data = penguins, 
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = bill_depth_mm)) + 
+  geom_smooth() 
 ```
 
 ![](hmk_03_files/figure-commonmark/unnamed-chunk-13-1.png)

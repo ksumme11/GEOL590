@@ -31,7 +31,6 @@ OR
 x * π
 ```
 
-
 3.  Use the `getwd()` function to show your current working directory. Is that a good working directory, and what program do you think set it that way?
 
 ```{r}
@@ -39,10 +38,7 @@ x * π
 getwd() 
 
 ```
-
-No, it is not a good working directory because it is not linked to my class folder. I think R automatically set the directory to my "downloads" folder because I did not indicate the directory I wanted it to follow. I reset the directory to my class folder using the setwd() function.
-
-I changed the working directory manually through session -> set working directory -> choose path 
+Yes, the working directory that is set is useful for this document. I opened the document in my MICR 575 project in R, which is automatically set to C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590, my class folder. I changed my working directory to go to my ~/Homework/HMK_03 folder within the class folder for this assignment. 
 
 ## Vectors
 
@@ -75,7 +71,6 @@ OR
 c(1:10)
 
 ```
-
 
 4.  Explain *why* the following code returns what it does. Also address whether you think this was a good decision on the part of the designers of R?
 
@@ -125,8 +120,6 @@ rm removes what is listed in the function, list allows the names to be added to 
 
 ```{r, warning=FALSE, message=FALSE}
 
-message=FALSE
-
 library(tidyverse)
 
 ```
@@ -136,17 +129,15 @@ library(tidyverse)
 ```{r, warning=FALSE, message=FALSE}
 
 #Load the libraries of data and ggplot for graphing
-    library(palmerpenguins)
-    library(ggthemes)
-    library(ggplot2)
+library(palmerpenguins)
+library(ggthemes)
+library(ggplot2)
 
 #Recreate final graph 
-    ggplot(
-  data = penguins, # dataset
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)) + # x and y axis information and labels
-  geom_point(aes(color = bill_depth_mm)) + # scatter plot information
-  geom_smooth() # line showing how these points and other info correlate
-    
+ggplot(data = penguins, 
+  mapping = aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = bill_depth_mm)) + 
+  geom_smooth() 
 ```
 
 4.  Explain why each aesthetic is mapped at the level that it is (i.e., at the global level, in the `ggplot()` function call, or at the geom level, in the `geom_XXX()` function call). Note: A lot of different options will work, but some options are clearly better than others.
