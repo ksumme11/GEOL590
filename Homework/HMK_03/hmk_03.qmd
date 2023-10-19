@@ -135,7 +135,7 @@ library(ggplot2)
 
 #Recreate final graph 
 ggplot(data = penguins, 
-  mapping = aes(x = flipper_length_mm, y = body_mass_g)) + 
+       mapping = aes(x = flipper_length_mm, y = body_mass_g)) + 
   geom_point(aes(color = bill_depth_mm)) + 
   geom_smooth() 
 ```
