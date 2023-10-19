@@ -6,46 +6,10 @@
 
 ``` r
 library(tidyverse)
-```
-
-    Warning: package 'tidyverse' was built under R version 4.2.3
-
-    Warning: package 'ggplot2' was built under R version 4.2.3
-
-    Warning: package 'readr' was built under R version 4.2.3
-
-    Warning: package 'forcats' was built under R version 4.2.3
-
-    Warning: package 'lubridate' was built under R version 4.2.3
-
-    ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-    ✔ dplyr     1.1.0     ✔ readr     2.1.4
-    ✔ forcats   1.0.0     ✔ stringr   1.5.0
-    ✔ ggplot2   3.4.1     ✔ tibble    3.1.8
-    ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-    ✔ purrr     1.0.1     
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-
-``` r
 library(ggplot2)
 
 
 Marsh <- read_csv("Marsh.csv")
-```
-
-    Rows: 177 Columns: 3
-    ── Column specification ────────────────────────────────────────────────────────
-    Delimiter: ","
-    chr (1): Site
-    dbl (2): Sample ID, CH4 (uM)
-
-    ℹ Use `spec()` to retrieve the full column specification for this data.
-    ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-
-``` r
 glimpse(Marsh)
 ```
 
@@ -67,12 +31,6 @@ Marsh |> ggplot(mapping = aes(x =`CH4 (uM)`, y=`Sample ID`, shape= Site, color=S
   geom_label(aes(label = Site)) +
   labs(x = "CH4", y = "TTE.23.M01.WD") 
 ```
-
-    Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-    ℹ Please use `linewidth` instead.
-
-    Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-    ℹ Please use the `linewidth` argument instead.
 
 ![](HMK07_files/figure-commonmark/unnamed-chunk-1-1.png)
 
