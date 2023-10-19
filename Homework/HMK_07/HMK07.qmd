@@ -14,7 +14,6 @@ library(ggplot2)
 
 
 Marsh <- read_csv("Marsh.csv")
-glimpse(Marsh)
 
 Marsh |> ggplot(mapping = aes(x =`CH4 (uM)`, y=`Sample ID`, shape= Site, color=Site)) +
   geom_point(size = 10) + 

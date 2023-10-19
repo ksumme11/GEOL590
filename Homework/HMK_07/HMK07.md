@@ -10,16 +10,7 @@ library(ggplot2)
 
 
 Marsh <- read_csv("Marsh.csv")
-glimpse(Marsh)
-```
 
-    Rows: 177
-    Columns: 3
-    $ Site        <chr> "M1", "M1", "M1", "M1", "M1", "M1", "M1", "M1", "M1", "M1"…
-    $ `Sample ID` <dbl> 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32…
-    $ `CH4 (uM)`  <dbl> 26.03260, 11.80838, 22.00536, 43.90894, 96.50104, 300.0839…
-
-``` r
 Marsh |> ggplot(mapping = aes(x =`CH4 (uM)`, y=`Sample ID`, shape= Site, color=Site)) +
   geom_point(size = 10) + 
   xlim(-50, 20000) +
