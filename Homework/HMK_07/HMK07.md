@@ -50,8 +50,16 @@ Marsh |> ggplot(mapping = aes(x = `CH4 (uM)`, y = `Sample ID`, color=Site)) +
   geom_point(size = 2) +
   scale_color_brewer(palette = "Paired") +
   labs(title = "Methane Abundance vs Depth in Coastal Marsh Sediment", x = "Methane (uM)", y = "Sample Depth (cm)") +
-  facet_wrap(~Site)+
+  facet_wrap(~Site) +
   scale_y_reverse() 
 ```
 
 ![](HMK07_files/figure-commonmark/unnamed-chunk-2-1.png)
+
+# Why this plot is better
+
+- By adding panels, it is easier to see the trend of methane in each
+  site from the top of the core to the bottom.
+- There are no unnecessary background colors or grid lines.
+- The scale makes more sense compared to the large scale on the bad
+  plot.
