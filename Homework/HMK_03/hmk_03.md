@@ -16,10 +16,8 @@
 2.  Calculate the product of `x` (from the above question) times π.
 
 ``` r
-print(pi)*x
+(pi)*x
 ```
-
-    [1] 3.141593
 
     [1] 56.54867
 
@@ -46,7 +44,8 @@ Yes, the working directory that is set is useful for this document. I
 opened the document in my MICR 575 project in R, which is automatically
 set to C:/Users/kayla/OneDrive/Desktop/UTK/UTK_F2023/GEOL_590, my class
 folder. I changed my working directory to go to my ~/Homework/HMK_03
-folder within the class folder for this assignment.
+folder within the class folder for this assignment. The program that set
+it this way is RStudio.
 
 ## Vectors
 
@@ -55,27 +54,21 @@ folder within the class folder for this assignment.
 1.  Use the `c()` function to create a vector of numbers.
 
 ``` r
-c(1.1, 2.2, 3.3, 4.4, 5.5)
+x <- c(1.1, 2.2, 3.3, 4.4, 5.5)
 ```
-
-    [1] 1.1 2.2 3.3 4.4 5.5
 
 2.  Use the `c()` function to create a vector of characters.
 
 ``` r
-c("one", "two", "three")
+y <- c("one", "two", "three")
 ```
-
-    [1] "one"   "two"   "three"
 
 3.  Use the `:` implicit function to create a vector of integers from 1
     to 10.
 
 ``` r
-1:10 
+z <- 1:10 
 ```
-
-     [1]  1  2  3  4  5  6  7  8  9 10
 
 OR
 
@@ -115,7 +108,7 @@ adding the last value of v4 is added to the first number of v3 because
 the vector wraps. Although it is nice that R provides a warning that
 something could be wonky, it could still easily become confusing to the
 user. It would make more sense for the code to only run vectors of the
-same lenght to avoid inaccurate data that could easily be missed.
+same length to avoid inaccurate data that could easily be missed.
 
 5.  Explain what the following code does. It may be helpful to reference
     the answer to the previous question:
